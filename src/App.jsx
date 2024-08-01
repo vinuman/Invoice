@@ -24,6 +24,9 @@ function App() {
             </address>
             <div className=" mt-8">
               <h3>
+                <span className="text-[20px]">PAN: </span> BVOPC1207M
+              </h3>
+              <h3>
                 <span className="text-[20px]">Bank Acc: </span> 50100255641330
               </h3>
               <h3>
