@@ -1,7 +1,8 @@
 import BillTable from "./components/BillTable";
 
 function App() {
-  const data = [{ hours: 94.85, rate: 400 }];
+  const data = [{ hours: 62.5, rate: 400 }];
+  const date = "1 Jan 2024";
   return (
     <>
       <div className="py-[30px] px-[20px]  flex justify-between">
@@ -61,7 +62,7 @@ function App() {
             Invoice
           </h1>
           <p className="flex items-center">
-            <span className="">Date:</span> 1 Oct 2024
+            <span className="">Date:</span> {date}
           </p>
         </div>
       </div>
