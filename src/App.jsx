@@ -1,8 +1,11 @@
 import BillTable from "./components/BillTable";
 
 function App() {
-  const data = [{ hours: 62.5, rate: 400 }];
-  const date = "1 Jan 2024";
+  const data = [
+    { hours: 18, rate: 400 },
+    { hours: 100, rate: 500 },
+  ];
+  const date = "1 Feb 2024";
   return (
     <>
       <div className="py-[30px] px-[20px]  flex justify-between">
