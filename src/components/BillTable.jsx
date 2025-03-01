@@ -25,7 +25,7 @@ const BillTable = ({ data }) => {
             {data.map((item, index) => (
               <tr key={index} className="border-b border-gray-400">
                 <td className="px-4 py-2 text-sm text-gray-700">
-                  Web Development
+                  {item.title}
                 </td>
                 <td className="px-4 py-2 text-sm text-gray-700">
                   {item.hours}

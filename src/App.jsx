@@ -2,10 +2,10 @@ import BillTable from "./components/BillTable";
 
 function App() {
   const data = [
-    { hours: 18, rate: 400 },
-    { hours: 100, rate: 500 },
+    { title: "Web Development", hours: 123.5, rate: 500 },
+    { title: "Pentagon Operations", hours: 3.5, rate: 500 },
   ];
-  const date = "1 Feb 2024";
+  const date = "1 March 2025";
   return (
     <>
       <div className="py-[30px] px-[20px]  flex justify-between">
