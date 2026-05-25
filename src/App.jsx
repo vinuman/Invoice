@@ -1,76 +1,37 @@
-import BillTable from "./components/BillTable";
+import InvoiceEditor from "./components/editor/InvoiceEditor";
+import InvoicePreview from "./components/preview/InvoicePreview";
 
 function App() {
-  const data = [
-    { title: "Web Development", hours: 123.5, rate: 500 },
-    { title: "Pentagon Operations", hours: 3.5, rate: 500 },
-  ];
-  const date = "1 March 2025";
+  // App state is handled in zustand stores (editor + preview).
+
   return (
     <>
-      <div className="py-[30px] px-[20px]  flex justify-between">
-        <div>
-          <address>
-            <span className=" text-[20px] font-medium text-amber-800">
-              Vinu Cyril
-            </span>
-            <br></br>
-            No:60, 4th cross<br></br>
-            Brindavan Layout<br></br>
-            Horamavu Kalkere main road<br></br>
-            Bangalore 560043
-          </address>
-          <div className=" mt-8">
-            <h3>
-              <span className="text-[20px] font-medium text-amber-800">
-                PAN:{" "}
-              </span>{" "}
-              BVOPC1207M
-            </h3>
-            <h3>
-              <span className="text-[20px] font-medium text-amber-800">
-                Bank Acc:{" "}
-              </span>{" "}
-              50100255641330
-            </h3>
-            <h3>
-              <span className="text-[20px] font-medium text-amber-800">
-                IFSC code:{" "}
-              </span>
-              HDFC0004075
-            </h3>
-            <h3>
-              <span className="text-[20px] font-medium text-amber-800">
-                UPI ID:{" "}
-              </span>
-              7560824678@ybl
-            </h3>
-          </div>
-          <div className=" mt-8">
-            <h2 className=" text-amber-800 font-extrabol text-lg">To:</h2>
-            <h1 className=" text-[30px] text-amber-800 font-bold">
-              Pentagon Studio
-            </h1>
+      <div className="min-h-screen bg-gray-50">
+        <header className="border-b border-gray-200 bg-white print:hidden">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
             <div>
-              <address>
-                4/108<br></br> Kadakkarapally PO<br></br> Cherthala,<br></br>{" "}
-                Alappuzha, 688529<br></br>
-                GSTIN: 32CWCPA6689R1ZX
-              </address>
+              <div className="text-sm font-semibold text-gray-900">Invoice Generator</div>
+              <div className="text-xs text-gray-600">Frontend-only • Saved locally in this browser</div>
             </div>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="rounded-md bg-amber-600 px-3 py-2 text-xs font-semibold text-white hover:bg-amber-700"
+            >
+              Print / Save PDF
+            </button>
           </div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h1 className=" text-[30px] text-amber-800 font-bold underline">
-            Invoice
-          </h1>
-          <p className="flex items-center">
-            <span className="">Date:</span> {date}
-          </p>
-        </div>
-      </div>
+        </header>
 
-      <BillTable data={data} />
+        <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-2 print:block print:max-w-none print:px-0 print:py-0">
+          <div className="lg:order-1">
+            <InvoiceEditor />
+          </div>
+          <div className="lg:order-2 print:order-1">
+            <InvoicePreview />
+          </div>
+        </main>
+      </div>
     </>
   );
 }
